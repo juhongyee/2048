@@ -1,5 +1,5 @@
 # 2048
-2048 게임을 개발 연습용으로 만들어보자
+I made a 2048 game that runs simply in the terminal with c++.
 
 # c++ 데모 버전
 c++ 함수만을 사용하여 절차적으로 2048을 구현해보았다.
