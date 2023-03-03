@@ -122,7 +122,7 @@ int random_create()
     // random_create로 80% 확률로 2, 20% 확률로 4 생성
     random_device rd;
     mt19937 gen(rd());
-    uniform_int_distribution<int> dis(0, 4);
+    uniform_int_distribution<int> dis(0, 9);
     int random = dis(gen);
 
     if (is_full())
@@ -130,12 +130,12 @@ int random_create()
         return -1;
     }
     else if (random == 0)
-    { // 20% 확률로 4 생성
+    { // 10% 확률로 4 생성
         create(4);
         return 4;
     }
     else
-    { // 80% 확률로 2 생성
+    { // 90% 확률로 2 생성
         create(2);
         return 2;
     }
