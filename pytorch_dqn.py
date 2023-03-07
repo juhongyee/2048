@@ -4,6 +4,7 @@ import torch.optim as optim
 import gym
 import random
 from collections import deque
+# pytorch로 강화학습 구현하는 스켈레톤드코드
 
 # 하이퍼파라미터
 BATCH_SIZE = 32
