@@ -1,6 +1,8 @@
 import numpy as np
 from collections import deque
 
+BOARD_SIZE = 4
+
 def rotate(m, d):
     """:input:
        m: 회전하고자 하는 2차원 배열. 입력이 정방형 행렬이라고 가정한다.
@@ -119,6 +121,15 @@ arr = np.array([
             [0,0,0,2],
             [4,0,0,2]],dtype=np.int16
         )
+
+def OneHotEncoding(arr):
+    one_hot = np.zeros((16,BOARD_SIZE,BOARD_SIZE))
+    for i in range(BOARD_SIZE):
+        for j in range(BOARD_SIZE):
+            if arr[i][j] != 0:
+                index_to_exp = int(np.log2(arr[i][j]))
+                one_hot[index_to_exp][i][j] = 1
+    return one_hot
 
 # perfect_done = True
 # for i1 in range(3):

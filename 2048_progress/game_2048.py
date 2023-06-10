@@ -1,12 +1,3 @@
-'''
-@Author:Drake
-2048 游戏环境
-存活：+1
-消去组合一对数：+10
-死局：-5
-
-'''
-
 import numpy as np
 
 
