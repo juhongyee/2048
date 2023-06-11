@@ -92,11 +92,11 @@ def representative(arr:np.array):
         for move_idx,move in enumerate(route):
             if(checked[move_idx]): #아직 제거되지 않은 move라면
                 val_cur = arr[move[idx]]    #현재 move의 val
-                val_min = arr[route[stack[-1]][idx]]
-                if val_cur>val_min:
+                val_max = arr[route[stack[-1]][idx]]
+                if val_cur<val_max:
                     checked[move_idx] = False
                     continue
-                elif val_cur == val_min:
+                elif val_cur == val_max:
                     stack.append(move_idx)
                 else:
                     while(stack):
@@ -131,58 +131,58 @@ def OneHotEncoding(arr):
                 one_hot[index_to_exp][i][j] = 1
     return one_hot
 
-# perfect_done = True
-# for i1 in range(3):
-#     for i2 in range(3):
-#         for i3 in range(3):
-#             for i4 in range(3):
-#                 for i5 in range(3):
-#                     for i6 in range(3):
-#                         for i7 in range(3):
-#                             for i8 in range(3):
-#                                 for i9 in range(3):
-#                                     for i10 in range(3):
-#                                         for i11 in range(3):
-#                                             for i12 in range(3):
-#                                                 for i13 in range(3):
-#                                                     for i14 in range(3):
-#                                                         for i15 in range(3):
-#                                                             for i16 in range(3):
-#                                                                 arr_0 = np.array([[i1,i2,i3,i4],[i5,i6,i7,i8],[i9,i10,i11,i12],[i13,i14,i15,i16]])
-#                                                                 arr_1 = rotate(arr_0,1)
-#                                                                 arr_2 = rotate(arr_0,2)
-#                                                                 arr_3 = rotate(arr_0,3)
-#                                                                 arr_4 = rotate(arr_0,4)
-#                                                                 arr_5 = rotate(arr_0,5)
-#                                                                 arr_6 = rotate(arr_0,6)
-#                                                                 arr_7 = rotate(arr_0,7)
+perfect_done = True
+for i1 in range(3):
+    for i2 in range(3):
+        for i3 in range(3):
+            for i4 in range(3):
+                for i5 in range(3):
+                    for i6 in range(3):
+                        for i7 in range(3):
+                            for i8 in range(3):
+                                for i9 in range(3):
+                                    for i10 in range(3):
+                                        for i11 in range(3):
+                                            for i12 in range(3):
+                                                for i13 in range(3):
+                                                    for i14 in range(3):
+                                                        for i15 in range(3):
+                                                            for i16 in range(3):
+                                                                arr_0 = np.array([[i1,i2,i3,i4],[i5,i6,i7,i8],[i9,i10,i11,i12],[i13,i14,i15,i16]])
+                                                                arr_1 = rotate(arr_0,1)
+                                                                arr_2 = rotate(arr_0,2)
+                                                                arr_3 = rotate(arr_0,3)
+                                                                arr_4 = rotate(arr_0,4)
+                                                                arr_5 = rotate(arr_0,5)
+                                                                arr_6 = rotate(arr_0,6)
+                                                                arr_7 = rotate(arr_0,7)
 
-#                                                                 result = []
-#                                                                 result.append(rotate(arr_0,representative(arr_0)))
-#                                                                 result.append(rotate(arr_1,representative(arr_1)))
-#                                                                 result.append(rotate(arr_2,representative(arr_2)))
-#                                                                 result.append(rotate(arr_3,representative(arr_3)))
-#                                                                 result.append(rotate(arr_4,representative(arr_4)))
-#                                                                 result.append(rotate(arr_5,representative(arr_5)))
-#                                                                 result.append(rotate(arr_6,representative(arr_6)))
-#                                                                 result.append(rotate(arr_7,representative(arr_7)))
+                                                                result = []
+                                                                result.append(rotate(arr_0,representative(arr_0)))
+                                                                result.append(rotate(arr_1,representative(arr_1)))
+                                                                result.append(rotate(arr_2,representative(arr_2)))
+                                                                result.append(rotate(arr_3,representative(arr_3)))
+                                                                result.append(rotate(arr_4,representative(arr_4)))
+                                                                result.append(rotate(arr_5,representative(arr_5)))
+                                                                result.append(rotate(arr_6,representative(arr_6)))
+                                                                result.append(rotate(arr_7,representative(arr_7)))
 
-#                                                                 perfect_check = True
+                                                                perfect_check = True
 
-#                                                                 N = len(arr_0)
-#                                                                 for r in range(N):
-#                                                                     for m in range(N):
-#                                                                         val = result[0][r][m]
-#                                                                         for i in range(1,len(result)):
-#                                                                             if(val != result[i][r][m]):
-#                                                                                 perfect_check = False
+                                                                N = len(arr_0)
+                                                                for r in range(N):
+                                                                    for m in range(N):
+                                                                        val = result[0][r][m]
+                                                                        for i in range(1,len(result)):
+                                                                            if(val != result[i][r][m]):
+                                                                                perfect_check = False
 
-#                                                                 if(perfect_check):
-#                                                                     continue
-#                                                                 else:
-#                                                                     perfect_done = False
-#                                                                     print([[i1,i2,i3,i4],[i5,i6,i7,i8],[i9,i10,i11,i12],[i13,i14,i15,i16]])
-#                                                                     exit()
+                                                                if(perfect_check):
+                                                                    continue
+                                                                else:
+                                                                    perfect_done = False
+                                                                    print([[i1,i2,i3,i4],[i5,i6,i7,i8],[i9,i10,i11,i12],[i13,i14,i15,i16]])
+                                                                    exit()
 
-# if(perfect_done):
-#     print("Perfect")
+if(perfect_done):
+    print("Perfect")
